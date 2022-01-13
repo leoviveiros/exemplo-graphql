@@ -1,0 +1,11 @@
+# instala gqlgen
+go get github.com/99designs/gqlgen
+
+# inicializa o projeto
+go run github.com/99designs/gqlgen init
+
+# roda o servidor
+go run server.go
+
+# gera o codigo novamente
+go generate ./...

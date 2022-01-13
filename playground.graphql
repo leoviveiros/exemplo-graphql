@@ -1,0 +1,60 @@
+query findCategories {
+  categories {
+    id
+    name
+    description
+    courses {
+      name
+    }
+  }
+}
+
+query findCourses {
+  courses {
+    id
+    name
+    description
+    category {
+      name
+    }
+    chapters {
+      name
+    }
+  }
+}
+
+mutation createCategory {
+  createCategory(input: {name: "Categoria 01", description: "Descrição Categoria 01"}) {
+    id
+    name
+    description
+  }
+}
+
+mutation createCourse {
+  createCourse(input: {name: "Curso 01", description: "Descrição do Curso 01", categoryID: "T5577006791947779410"}) {
+    id
+    name
+    description
+    category {
+      name
+    }
+  }
+}
+
+mutation createChapter {
+  createChapter(input: {
+    name:"Capitulo 01",
+    courseID: "T8674665223082153551",
+    categoryID: "T5577006791947779410"
+  }) {
+    id
+    name
+    course{
+      name
+    }
+    category {
+      name
+    }
+  }
+}
